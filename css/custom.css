@@ -1,0 +1,81 @@
+/*search box css start here*/
+.search-sec {
+    padding: 2rem;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: red;
+}
+
+.search-slt {
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius: 0;
+}
+
+.wrn-btn {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    height: calc(3rem + 2px) !important;
+    border-radius: 0;
+}
+
+.profile {
+    padding: 0px;
+}
+
+.sidebar {
+    list-style: none;
+    padding: 0px;
+}
+
+.sidebar li {
+    width: 300px;
+    height: 110px;
+    background: #dc3545;
+    color: #fff;
+    margin-bottom: 1px;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.sidebar li:before,
+.sidebar li:after {
+    width: 20px;
+    height: 50%;
+    position: absolute;
+    left: 100%;
+    content: "";
+}
+
+/*  .sidebar li:before {
+      top: 0px;
+      background: linear-gradient(to right top, #dc3545 50%, transparent 50%)
+  }
+  
+  .sidebar li:after {
+      top: 50%;
+      background: linear-gradient(to right bottom, #dc3545 50%, transparent 50%)
+  } */
+@media (min-width: 992px) {
+    .search-sec {
+        position: relative;
+        /*top: -114px;*/
+        background: rgba(26, 70, 104, 0.51);
+    }
+}
+
+@media (max-width: 992px) {
+    .search-sec {
+        background: #1A4668;
+    }
+}
