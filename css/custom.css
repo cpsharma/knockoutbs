@@ -1,10 +1,19 @@
+body {
+    color: #4F145B !important;
+    font-family: Gotham-light !important;
+}
+
 /*search box css start here*/
 .search-sec {
     padding: 2rem;
+    color: #61126b !important;
+    background-color: #f3a0b5;
 }
 
-.form-control::-webkit-input-placeholder {
-    color: red;
+.top-header {
+    font-family: Gotham-Light !important;
+    color: #61126b !important;
+
 }
 
 .search-slt {
@@ -29,8 +38,30 @@
     border-radius: 0;
 }
 
-.profile {
+.profile_table td {
     padding: 0px;
+    color: #4F145B !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: Gotham-light !important;
+    color: #4F145B !important;
+}
+
+.table th,
+.table td {
+    color: #4F145B !important;
 }
 
 .sidebar {
@@ -46,6 +77,7 @@
     margin-bottom: 1px;
     padding: 10px 20px;
     position: relative;
+    font-family: Gotham-light !important;
 }
 
 .sidebar li:before,
@@ -55,6 +87,15 @@
     position: absolute;
     left: 100%;
     content: "";
+}
+
+#fetch-btn {
+    background-color: #e1163c;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+    font-family: gotham-light;
+
 }
 
 /*  .sidebar li:before {
@@ -70,12 +111,8 @@
     .search-sec {
         position: relative;
         /*top: -114px;*/
-        background: rgba(26, 70, 104, 0.51);
+
     }
 }
 
-@media (max-width: 992px) {
-    .search-sec {
-        background: #1A4668;
-    }
-}
+@media (max-width: 992px) {}

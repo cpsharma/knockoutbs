@@ -25,55 +25,7 @@ $(document).ready(function () {
 	function AppViewModel() {
 
 		self = this;
-		self.customer = ko.observableArray([{
-				"name": {
-					"title": "mr",
-					"first": "brad",
-					"last": "gibson"
-				},
-				"email": "brad.gibson@example.com",
-				"dob": {
-					"date": "1993-07-20T09:44:18.674Z",
-					"age": 26
-				},
-				"phone": "011-962-7516",
-				"cell": "081-454-0666",
-				"location": {
-					"street": "9278 new road",
-					"city": "kilcoole",
-					"state": "waterford",
-					"postcode": "93027",
-					"coordinates": {
-						"latitude": "20.9267",
-						"longitude": "-7.9310"
-					}
-				}
-			},
-			{
-				"name": {
-					"title": "mr",
-					"first": "Jim",
-					"last": "gibson"
-				},
-				"email": "brad.gibson@example.com",
-				"dob": {
-					"date": "1993-07-20T09:44:18.674Z",
-					"age": 26
-				},
-				"phone": "011-962-7516",
-				"cell": "081-454-0666",
-				"location": {
-					"street": "9278 new road",
-					"city": "kilcoole",
-					"state": "waterford",
-					"postcode": "93027",
-					"coordinates": {
-						"latitude": "20.9267",
-						"longitude": "-7.9310"
-					}
-				}
-			}
-		]);
+		self.customer = ko.observableArray([]);
 
 		self.chosenCustomer = ko.observable();
 		self.chosenCustomerData = ko.observable();
@@ -82,8 +34,32 @@ $(document).ready(function () {
 		self.goToCustomer = function (customer) {
 			self.chosenCustomer(customer);
 			self.chosenCustomerData(customer);
-			console.log(self.chosenCustomerData());
 		};
+		$('#fetch-btn').on('click', function () {
+			customerNumber = $('#customer-number').val();
+			email = $('#email-input').val();
+
+			if (customerNumber || email) {
+				param = customerNumber ? customerNumber : email;
+				$.ajax({
+					url: 'https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb',
+					dataType: 'json',
+					success: function (data) {
+						if (data.results[0] && data.results[0].length > 0) {
+							console.log(_.filter(data.results[0], function (obj) {
+								return obj.email.includes(param);
+							}));
+							self.customer(
+								_.filter(data.results[0], function (obj) {
+									return obj.email.includes(param);
+								})
+							);
+						}
+					}
+				});
+			}
+
+		});
 	}
 
 	// Activates knockout.js
@@ -93,4 +69,5 @@ $(document).ready(function () {
 			$('#sidebarCollapse').click();
 		});
 	}
+
 });

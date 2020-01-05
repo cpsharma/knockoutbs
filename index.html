@@ -15,10 +15,10 @@
 </head>
 
 <body>
-  <div class="container-fluid" style="background-color: #dc3545;">
+  <div class="container-fluid">
     <div class="row pt-1 pb-1">
       <div class="col-lg-12">
-        <h1 class="text-center text-white">Search Customers</h1>
+        <h1 class="text-center top-header">Search Customers</h1>
 
       </div>
     </div>
@@ -42,7 +42,7 @@
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12 p-0 pl-1 d-flex align-items-end">
 
-                <button id="fetch-btn" type="button" class="btn btn-danger wrn-btn">Search</button>
+                <button id="fetch-btn" type="button" class="btn btn-danger wrn-btn">Fetch</button>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@
         <li class="customer-item active"
           data-bind="css: { selected: $data == $root.chosenCustomer() }, click: $root.goToCustomer">
           <a class="text-white">
-            <h4 class="text-white" data-bind="text: name.first.toUpperCase()"></h4>
+            <h5 class="text-white" data-bind="text: first +', '+last"></h5>
             <h6 class="text-white" data-bind="text: email"></h6>
           </a>
 
@@ -81,24 +81,24 @@
             <table class="table profile__table">
               <tbody data-bind="with: $root.chosenCustomerData">
                 <tr>
-                  <th><strong>Name</strong></th>
-                  <td data-bind="text: name.first"></td>
+                  <th class="h5">Name:</th>
+                  <td data-bind="text: first +', '+last"></td>
                 </tr>
                 <tr>
-                  <th><strong>Email</strong></th>
+                  <th class="h5">Email:</th>
                   <td data-bind="text: email"></td>
                 </tr>
                 <tr>
-                  <th><strong>DOB</strong></th>
-                  <td data-bind="text: dob.date"></td>
+                  <th class="h5">DOB:</th>
+                  <td data-bind="text: created"></td>
                 </tr>
                 <tr>
-                  <th><strong>Phone</strong></th>
-                  <td data-bind="text: phone"></td>
+                  <th class="h5">Phone:</th>
+                  <td data-bind="text: balance"></td>
                 </tr>
                 <tr>
-                  <th><strong>Address</strong></th>
-                  <td data-bind="text: location.street"></td>
+                  <th class="h5">Address:</th>
+                  <td data-bind="text: address"></td>
                 </tr>
               </tbody>
             </table>
@@ -108,10 +108,11 @@
     </div>
   </div>
 
-  <script src="js/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
